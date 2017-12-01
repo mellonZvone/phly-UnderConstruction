@@ -49,8 +49,8 @@ if($_POST) {
     'X-Mailer: PHP/' . phpversion();
     
     // Body of the Email received in your Mailbox
-    $emailcontent = 'Hey! You have received a new message from the visitor <strong>'.$_POST["userName"].'</strong><br/><br/>'. "\r\n" .
-                'His message: <br/> <em>'.$_POST["userMessage"].'</em><br/><br/>'. "\r\n" .
+    $emailcontent = 'Hey! Primio si poruku od posjetitelja <strong>'.$_POST["userName"].'</strong><br/><br/>'. "\r\n" .
+                'Poruka: <br/> <em>'.$_POST["userMessage"].'</em><br/><br/>'. "\r\n" .
                 '<strong>Feel free to contact '.$_POST["userName"].' via email at : '.$_POST["userEmail"].'</strong>' . "\r\n" ;
     
     $Mailsending = @mail($to_Email, $_POST["userSubject"], $emailcontent, $headers);
