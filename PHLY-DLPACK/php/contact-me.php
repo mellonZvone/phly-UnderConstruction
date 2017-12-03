@@ -1,7 +1,7 @@
 <?php
 if($_POST) {
 
-    $to_Email = "logiic91@gmail.com"; // Write your email here
+    $to_Email = "bbmauto@net.hr"; // Write your email here
    
     // Use PHP To Detect An Ajax Request
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -49,9 +49,9 @@ if($_POST) {
     'X-Mailer: PHP/' . phpversion();
     
     // Body of the Email received in your Mailbox
-    $emailcontent = 'Hey! Primio si poruku od posjetitelja <strong>'.$_POST["userName"].'</strong><br/><br/>'. "\r\n" .
+    $emailcontent = 'Pozdrav! Primio si poruku od posjetitelja <strong>'.$_POST["userName"].'</strong><br/><br/>'. "\r\n" .
                 'Poruka: <br/> <em>'.$_POST["userMessage"].'</em><br/><br/>'. "\r\n" .
-                '<strong>Feel free to contact '.$_POST["userName"].' via email at : '.$_POST["userEmail"].'</strong>' . "\r\n" ;
+                '<strong>Slobodno kontaktiraš '.$_POST["userName"].' preko email-a na : '.$_POST["userEmail"].'</strong>' . "\r\n" ;
     
     $Mailsending = @mail($to_Email, $_POST["userSubject"], $emailcontent, $headers);
    
@@ -62,7 +62,7 @@ if($_POST) {
         die($output);
         
     } else {
-        $output = json_encode(array('type'=>'message', 'text' => '<i class="icon ion-checkmark-round"></i> Hello '.$_POST["userName"] .', Poruka je poslana, odgovor ćete dobiti u što kraćem roku !'));
+        $output = json_encode(array('type'=>'message', 'text' => '<i class="icon ion-checkmark-round"></i> Pozdrav '.$_POST["userName"] .', poruka je poslana, odgovor ćete dobiti u što kraćem roku !'));
         die($output);
     }
 }
